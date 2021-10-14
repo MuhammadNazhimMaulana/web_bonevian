@@ -22,6 +22,10 @@ class Authorisasi extends BaseController
 
     public function register()
     {
+        $data_auth = [
+            'title' => 'Register Admin'
+        ];
+        
         if ($this->request->getPost()) {
 
             // Validasi data yang di post
@@ -33,29 +37,38 @@ class Authorisasi extends BaseController
             //Jika tidak ada error
             if (!$errors) {
 
-                $model = new User_M();
-                $user = new User_E();
+                $model = new Pengguna_M();
+                $user = new Pengguna_E();
 
                 // Dapatkan data yang telah di input
                 $user->fill($data);
                 $user->tingkat = 1;
                 $user->tgl_masuk = date("Y-m-d");
                 $user->created_at = date("Y-m-d H:i:s");
-                $user->foto_user = $this->request->getFile('foto_user');
+                $user->foto_pengguna = $this->request->getFile('foto_pengguna');
                 $user->password = $this->request->getPost('password');
 
                 $model->save($user);
-                return view('Authorisasi_View/login_view');
+
+                $data_auth = [
+                    'title' => 'Login Admin'
+                ];
+
+                return view('Auth_View/login_web', $data_auth);
             }
 
             $this->session->setFlashdata('errors', $errors);
         }
 
-        return view('Authorisasi_View/register_view');
+        return view('Auth_View/register_web', $data_auth);
     }
 
     public function login()
     {
+        $data_auth = [
+            'title' => 'Login Admin'
+        ];
+
         if ($this->request->getPost()) {
 
             // Validasi data yang di post
@@ -68,7 +81,7 @@ class Authorisasi extends BaseController
                 return view('login');
             }
 
-            $model = new User_M();
+            $model = new Pengguna_M();
 
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
@@ -81,7 +94,7 @@ class Authorisasi extends BaseController
             } else {
                 $session_data = [
                     'username' => $user->username,
-                    'nama' => $user->nama_lengkapa,
+                    'nama' => $user->nama_lengkap,
                     'id_user' => $user->id_user,
                     'tingkat' => $user->tingkat,
                     'isLoggedIn' => TRUE
@@ -89,14 +102,14 @@ class Authorisasi extends BaseController
 
                 $this->session->set($session_data);
 
-                return redirect()->to(site_url('admin/'));
+                return redirect()->to(site_url('Admin/Admin_C/home'));
             }
             
             $this->session->setFlashdata('errors', $errors);
             
         }
 
-        return view('Authorisasi_View/login_view');
+        return view('Auth_View/login_web', $data_auth);
     }
 
     public function logout()
