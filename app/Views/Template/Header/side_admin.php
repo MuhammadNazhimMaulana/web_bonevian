@@ -15,7 +15,7 @@
                 <span>Profile</span></a>
             </li>
             <li>
-                <a href="#"><span class="las la-clipboard-list"></span>
+                <a href="<?= site_url('Admin/Posts_C/read'); ?>"><span class="las la-clipboard-list"></span>
                 <span>Projects</span></a>
             </li>
             <li>

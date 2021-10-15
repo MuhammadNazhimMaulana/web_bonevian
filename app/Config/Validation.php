@@ -101,5 +101,44 @@ class Validation
 		],
 	];
 
+	// Bagian Post
+
+	public $post = [
+		'id_pengguna' => [
+			'rules' => 'required',
+		],
+		'judul_post' => [
+			'rules' => 'required',
+		],
+	];
+
+	public $post_errors = [
+		'id_pengguna' => [
+			'required' => '{field} Harus diisi',
+		],
+		'judul_post' => [
+			'required' => '{field} Harus diisi',
+		],
+	];
+
+	public $update_post = [
+		'id_pengguna' => [
+			'rules' => 'required',
+		],
+		'judul_post' => [
+			'rules' => 'required',
+		],
+	];
+
+	public $update_post_errors = [
+		'id_pengguna' => [
+			'required' => '{field} Harus diisi',
+		],
+		'judul_post' => [
+			'required' => '{field} Harus diisi',
+		],
+	];
+
+
     //--------------------------------------------------------------------
 }
