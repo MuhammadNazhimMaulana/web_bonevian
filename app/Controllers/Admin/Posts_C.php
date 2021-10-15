@@ -28,7 +28,7 @@ class Posts_C extends BaseController
         $data = [
             'data_pengguna' => $model->join('tbl_pengguna', 'tbl_pengguna.id_pengguna = tbl_postingan.id_pengguna')->paginate(5, 'postingan'),
             'pager' => $model->pager,
-            'title' => 'Daftar Postingan',
+            'title' => 'Postingan',
         ];
 
         return view('Admin_View/Admin_Posts/read_posts', $data);
@@ -46,7 +46,7 @@ class Posts_C extends BaseController
         // Data yang akan dikirim ke view specific
         $data = [
             "posts" =>$postingan,
-            "title" => 'Satu Postingan'
+            "title" => 'Postingan'
         ];
 
         return view('Admin_View/Admin_Posts/view_specific_post', $data);
@@ -65,7 +65,7 @@ class Posts_C extends BaseController
         }
 
         $data_pengguna = [
-            "title" => 'Tambah Postingan',
+            "title" => 'Postingan',
             'daftar_pengguna' => $list_pengguna,
         ];
 
@@ -124,7 +124,7 @@ class Posts_C extends BaseController
 
         $data = [
             'projects' =>$postingan,
-            "title" => 'harga',
+            'title' => 'Postingan',
             'daftar_pengguna' => $list_pengguna,
         ];
 

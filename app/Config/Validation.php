@@ -80,7 +80,7 @@ class Validation
 			'matches' => '{field} Tidak sama dengan Password',
 		]
 	];
-
+	
 	// Bagian Login
 	public $login = [
 		'username' => [
@@ -90,7 +90,7 @@ class Validation
 			'rules' => 'required',
 		],
 	];
-
+	
 	public $login_errors = [
 		'username' => [
 			'required' => '{field} Harus diisi',
@@ -100,9 +100,9 @@ class Validation
 			'required' => '{field} Harus diisi',
 		],
 	];
-
+	
 	// Bagian Post
-
+	
 	public $post = [
 		'id_pengguna' => [
 			'rules' => 'required',
@@ -111,7 +111,7 @@ class Validation
 			'rules' => 'required',
 		],
 	];
-
+	
 	public $post_errors = [
 		'id_pengguna' => [
 			'required' => '{field} Harus diisi',
@@ -120,7 +120,7 @@ class Validation
 			'required' => '{field} Harus diisi',
 		],
 	];
-
+	
 	public $update_post = [
 		'id_pengguna' => [
 			'rules' => 'required',
@@ -129,7 +129,7 @@ class Validation
 			'rules' => 'required',
 		],
 	];
-
+	
 	public $update_post_errors = [
 		'id_pengguna' => [
 			'required' => '{field} Harus diisi',
@@ -138,7 +138,19 @@ class Validation
 			'required' => '{field} Harus diisi',
 		],
 	];
+	
+	public $update_profile = [
+		'nama_lengkap' => [
+			'rules' => 'required',
+		],
+	];
+	
+	public $update_profile_errors = [
+		'nama_lengkap' => [
+			'required' => '{field} Harus diisi',
+		],
+	];
 
-
+	
     //--------------------------------------------------------------------
 }
