@@ -7,16 +7,29 @@
     <title><?= $title ?></title>
 
     <!-- Link CSS Bootstrap -->
-    <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>">   
+    <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>">  
+
     <!-- Link custom css -->
     <link rel="stylesheet" href="<?= base_url('css/user.css')?>">
-    
+
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
 
-    <!-- Awal isi Auth -->
-    <?= $this->renderSection('user') ?>
-    <!-- Akhir isi Auth -->
+<main>
+    <div class="big-wrapper">
+        <!-- Header -->
+        <?= $this->include('Template/Header/header_user') ?>
+    
+        <!-- Awal isi Auth -->
+        <div class="showcae-area">
+            <?= $this->renderSection('user') ?>
+        </div>
+        <!-- Akhir isi Auth -->
+    </div>
+</main>
     
 
     <!-- Link JS Bootstrap -->
