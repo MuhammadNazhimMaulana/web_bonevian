@@ -143,6 +143,10 @@ header .kontainer {
   justify-content: center;
 }
 
+.full {
+  min-height: 300px;
+}
+
 .big-title {
   font-size: 1.4rem;
   color: var(--hitam-satu);

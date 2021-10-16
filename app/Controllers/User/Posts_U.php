@@ -21,13 +21,35 @@ class Posts_U extends BaseController
         $this->session = session();
     }
 
-    public function home()
+    public function read()
     {
-        $data_user = [
-            'title' => 'Dashboard User'
+        $model = new Projects_M();
+
+        $data = [
+            'data_pengguna' => $model->join('tbl_pengguna', 'tbl_pengguna.id_pengguna = tbl_postingan.id_pengguna')->paginate(5, 'postingan'),
+            'pager' => $model->pager,
+            'title' => 'Postingan',
         ];
 
-        return view('User_View/dashboard_user', $data_user);
+        return view('User_View/Post_User/read_posts_user', $data);
+    }
+
+    public function view()
+    {
+        // Dapatkan Id dari segmen
+        $id_postingan = $this->request->uri->getSegment(4);
+
+        $model = new Projects_M();
+
+        $postingan = $model->join('tbl_pengguna', 'tbl_pengguna.id_pengguna = tbl_postingan.id_pengguna')->where('tbl_postingan.id_postingan', $id_postingan)->first();
+
+        // Data yang akan dikirim ke view specific
+        $data = [
+            "posts" =>$postingan,
+            "title" => 'Postingan'
+        ];
+
+        return view('User_View/Post_User/view_specific_post_user', $data);
     }
 
 }
