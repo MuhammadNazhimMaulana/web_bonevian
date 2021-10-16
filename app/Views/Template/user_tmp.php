@@ -19,20 +19,27 @@
 <body>
 
 <main>
-    <div class="big-wrapper">
+    <div class="big-wrapper light">
+        <img src="<?= base_url('img/shape.png') ?>" class="shape">
         <!-- Header -->
         <?= $this->include('Template/Header/header_user') ?>
-    
-        <!-- Awal isi Auth -->
-        <div class="showcae-area">
+        
+        <!-- Awal isi Home -->
+        <div class="showcase-area">
             <?= $this->renderSection('user') ?>
         </div>
-        <!-- Akhir isi Auth -->
+        <!-- Akhir isi Home -->
+        
+        <!-- Footer -->
+        <?= $this->include('Template/Footer/footer_user') ?>
     </div>
 </main>
     
 
     <!-- Link JS Bootstrap -->
     <script src="<?= base_url('bootstrap/js/bootstrap.min.js')?>"></script>
+
+    <!-- Link JS Custom -->
+    <script src="<?= base_url('js/main.js')?>"></script>
 </body>
 </html>

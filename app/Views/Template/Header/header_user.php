@@ -13,5 +13,11 @@
                 <li><a href="#" class="tombol">Last</a></li>
             </ul>
         </div>
+
+        <div class="overlay"></div>
+
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+        </div>
     </div>
 </header>
