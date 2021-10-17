@@ -115,6 +115,6 @@ class Authorisasi extends BaseController
     public function logout()
     {
         $this->session->destroy();
-        return redirect()->to(site_url('Admin/login'));
+        return redirect()->to(site_url('/login'));
     }
 }

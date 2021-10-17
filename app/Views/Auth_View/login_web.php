@@ -36,7 +36,7 @@ $errors = $session->getFlashdata('errors');
                     <img src="<?= base_url('img/Bonevian.png') ?>" class="w-25" />
                 </div>
 
-                <?= form_open('Admin/login') ?>
+                <?= form_open('/login') ?>
                     <div class="mb-4">
                         <?= form_label("Username", "username") ?>
                         <?= form_input($username) ?>
@@ -55,7 +55,7 @@ $errors = $session->getFlashdata('errors');
 
                 <?= form_close() ?>
                 
-                <p class="mb-0 text-center">Belum Register? <a href="<?= base_url('Admin/register') ?>" class="text-decoration-none">Daftar Disini</a></p>
+                <p class="mb-0 text-center">Belum Register? <a href="<?= base_url('/register') ?>" class="text-decoration-none">Daftar Disini</a></p>
             </div>
         </div>
     </div>

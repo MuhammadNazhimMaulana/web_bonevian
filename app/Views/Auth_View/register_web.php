@@ -85,7 +85,7 @@ $errors = $session->getFlashdata('errors');
                     </div>
                 <?php endif ?>
 
-                <?= form_open_multipart('Auth/Authorisasi/register') ?>
+                <?= form_open_multipart('/register') ?>
                     <div class="mb-4">
                         <?= form_label("Nama Lengkap", "nama_lengkap") ?>
                         <?= form_input($nama_lengkap) ?>
@@ -131,7 +131,7 @@ $errors = $session->getFlashdata('errors');
 
                 <?= form_close() ?>
 
-                <p class="mb-0 text-center">Sudah Register? <a href="<?= site_url('Auth/Authorisasi/login') ?>" class="text-decoration-none">Login Disini</a></p>
+                <p class="mb-0 text-center">Sudah Register? <a href="<?= site_url('/login') ?>" class="text-decoration-none">Login Disini</a></p>
             </div>
         </div>
     </div>

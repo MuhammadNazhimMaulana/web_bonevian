@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 // Routes Admin
-$routes->group('Admin', function ($routes) {
+$routes->group('Admin', ['filter' => 'auth'], function ($routes) {
 
 	// Umum
 	$routes->add('/', 'Admin\Admin_C::home');
@@ -47,15 +47,16 @@ $routes->group('Admin', function ($routes) {
 	$routes->add('projects/update/(:any)', 'Admin\Posts_C::update/$1');
 	$routes->add('projects/delete/(:any)', 'Admin\Posts_C::delete/$1');
     
-    // Login
-    $routes->add('login', 'Auth\Authorisasi::login');
-    
-    // Register
-    $routes->add('register', 'Auth\Authorisasi::register');
     
     // Logout
     $routes->add('logout', 'Auth\Authorisasi::logout');
 });
+
+// Login
+$routes->add('/login', 'Auth\Authorisasi::login');
+
+// Register
+$routes->add('/register', 'Auth\Authorisasi::register');
 
 // Routes Umum
 $routes->group('Umum', function ($routes) {
