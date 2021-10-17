@@ -45,7 +45,7 @@ class Posts_U extends BaseController
 
         // Data yang akan dikirim ke view specific
         $data = [
-            "posts" =>$postingan,
+            "posts" => $postingan,
             "title" => 'Postingan'
         ];
 

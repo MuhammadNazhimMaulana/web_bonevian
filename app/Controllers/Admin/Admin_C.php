@@ -71,7 +71,7 @@ class Admin_C extends BaseController
 
                 $model->save($pengguna);
 
-                $segments = ['Admin', 'Admin_C', 'profile'];
+                $segments = ['Admin', 'profile'];
 
                 return redirect()->to(site_url($segments));
             }

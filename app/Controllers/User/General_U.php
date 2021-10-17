@@ -27,4 +27,13 @@ class General_U extends BaseController
         return view('User_View/Utama_U/landing_page', $data_user);
     }
 
+    public function contact()
+    {
+        $data_user = [
+            'title' => 'Kontak'
+        ];
+
+        return view('User_View/Utama_U/contact', $data_user);
+    }
+
 }

@@ -3,7 +3,7 @@
 <div class="kontainer">
     <div class="left">
         <div class="big-title">
-            <h1>Judul disini</h1>
+            <h1>Judul Nya Koe</h1>
             <h1>Mulai Eksplorasi</h1>
         </div>
         <p class="text">

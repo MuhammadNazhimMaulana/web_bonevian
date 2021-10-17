@@ -31,7 +31,45 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+
+// Routes Admin
+$routes->group('Admin', function ($routes) {
+
+	// Umum
+	$routes->add('/', 'Admin\Admin_C::home');
+	$routes->add('profile', 'Admin\Admin_C::profile');
+	$routes->add('profile/update/(:any)', 'Admin\Admin_C::update_profile/$1');
+
+	// Route Brang
+	$routes->add('projects', 'Admin\Posts_C::read');
+	$routes->add('projects/create', 'Admin\Posts_C::create');
+	$routes->add('projects/view/(:any)', 'Admin\Posts_C::view/$1');
+	$routes->add('projects/update/(:any)', 'Admin\Posts_C::update/$1');
+	$routes->add('projects/delete/(:any)', 'Admin\Posts_C::delete/$1');
+    
+    // Login
+    $routes->add('login', 'Auth\Authorisasi::login');
+    
+    // Register
+    $routes->add('register', 'Auth\Authorisasi::register');
+    
+    // Logout
+    $routes->add('logout', 'Auth\Authorisasi::logout');
+});
+
+// Routes Umum
+$routes->group('Umum', function ($routes) {
+
+	// Umum
+	$routes->add('/', 'User\General_U::home');
+	$routes->add('contact', 'User\General_U::contact');
+
+	// Route Brang
+	$routes->add('projects', 'User\Posts_U::read');
+	$routes->add('projects/view/(:any)', 'User\Posts_U::view/$1');
+    
+});
+
 
 /*
  * --------------------------------------------------------------------

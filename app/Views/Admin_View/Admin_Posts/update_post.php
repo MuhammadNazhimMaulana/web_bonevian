@@ -75,7 +75,7 @@ $errors = $session->getFlashdata('errors');
                     <?php endif ?>
 
                     <!-- Membuat Form dengan Form Helper -->
-                    <?= form_open_multipart('Admin/Posts_C/update/'. $projects->id_postingan) ?>
+                    <?= form_open_multipart('Admin/projects/update/'. $projects->id_postingan) ?>
 
                     <div class="form-group mt-3">
                             <?= form_label("Nama Penulis", "id_pengguna") ?>

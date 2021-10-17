@@ -102,7 +102,7 @@ class Authorisasi extends BaseController
 
                 $this->session->set($session_data);
 
-                return redirect()->to(site_url('Admin/Admin_C/home'));
+                return redirect()->to(site_url('Admin'));
             }
             
             $this->session->setFlashdata('errors', $errors);
@@ -115,6 +115,6 @@ class Authorisasi extends BaseController
     public function logout()
     {
         $this->session->destroy();
-        return redirect()->to(site_url('Auth/Authorisasi/login'));
+        return redirect()->to(site_url('Admin/login'));
     }
 }

@@ -8,7 +8,7 @@
                 <div class="kartu-header">
                     <h2>Daftar Postingan</h2>
 
-                    <button><a href="<?= site_url('Admin/Posts_C/create') ?>">Tambah Data</a></button>
+                    <button><a href="<?= base_url('Admin/projects/create') ?>">Tambah Data</a></button>
                 </div>
 
                 <div class="kartu-body">
@@ -34,9 +34,9 @@
                                         <td><?= $posts->isi_post ?></td>
                                         <td><?= $posts->ringkasan_post ?></td>
                                         <td class="col-md-3">
-                                            <a href="<?= base_url('Admin/Posts_C/view/' . $posts->id_pengguna) ?>" class="btn btn-primary">View</a>
-                                            <a href="<?= base_url('Admin/Posts_C/update/' . $posts->id_pengguna) ?>" class="btn btn-success">Update</a>
-                                            <a href="#modalDelete<?= $posts->id_pengguna ?>" data-bs-toggle="modal" onclick="" class="btn btn-danger">Delete</a>
+                                            <a href="<?= base_url('Admin/projects/view/' . $posts->id_postingan) ?>" class="btn btn-primary">View</a>
+                                            <a href="<?= base_url('Admin/projects/update/' . $posts->id_postingan) ?>" class="btn btn-success">Update</a>
+                                            <a href="#modalDelete<?= $posts->id_postingan ?>" data-bs-toggle="modal" onclick="" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
@@ -50,7 +50,7 @@
 
     <!-- Modal -->
     <?php foreach ($data_pengguna as $index => $posts) :?>
-            <div class="modal fade" id="modalDelete<?= $posts->id_pengguna ?>" tabindex="-1" data-bs-backdrop="static">
+            <div class="modal fade" id="modalDelete<?= $posts->id_postingan ?>" tabindex="-1" data-bs-backdrop="static">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -62,7 +62,7 @@
                         </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button class="btn btn-danger"><a href="<?= site_url('Admin/Posts_C/delete/' . $posts->id_pengguna) ?>">Delete</a></button>
+                                <button class="btn btn-danger"><a href="<?= base_url('Admin/projects/delete/' . $posts->id_postingan) ?>">Delete</a></button>
                             </div>
                     </div>
                 </div>

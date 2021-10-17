@@ -21,7 +21,7 @@
                         <td><?= $posts->judul_post ?></td>
                         <td><?= $posts->ringkasan_post ?></td>
                         <td>@mdo</td>
-                        <td><a href="<?= base_url('User/Posts_U/view/' . $posts->id_pengguna) ?>" class="btn btn-primary">View</a></td>
+                        <td><a href="<?= base_url('Umum/projects/view/' . $posts->id_postingan) ?>" class="btn btn-primary">View</a></td>
                         </tr>
                         <tr>
                     <?php endforeach ?>
