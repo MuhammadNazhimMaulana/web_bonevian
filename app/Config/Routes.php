@@ -53,10 +53,10 @@ $routes->group('Admin', ['filter' => 'auth'], function ($routes) {
 });
 
 // Login
-$routes->add('/login', 'Auth\Authorisasi::login');
+$routes->get('/login', 'Auth\Authorisasi::login');
 
 // Register
-$routes->add('/register', 'Auth\Authorisasi::register');
+$routes->get('/register', 'Auth\Authorisasi::register');
 
 // Routes Umum
 $routes->group('Umum', function ($routes) {
