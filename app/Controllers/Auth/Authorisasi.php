@@ -78,7 +78,7 @@ class Authorisasi extends BaseController
             $errors = $this->validation->getErrors();
 
             if ($errors) {
-                return view('login');
+                return view('/login');
             }
 
             $model = new Pengguna_M();

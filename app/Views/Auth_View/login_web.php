@@ -36,7 +36,7 @@ $errors = $session->getFlashdata('errors');
                     <img src="<?= base_url('img/Bonevian.png') ?>" class="w-25" />
                 </div>
 
-                <?= form_open('/login') ?>
+                <?= form_open('Auth/Authorisasi/login') ?>
                     <div class="mb-4">
                         <?= form_label("Username", "username") ?>
                         <?= form_input($username) ?>

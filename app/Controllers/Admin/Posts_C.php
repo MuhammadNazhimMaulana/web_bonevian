@@ -93,7 +93,7 @@ class Posts_C extends BaseController
 
                 $id_postingan = $model->insertID();
 
-                $segments = ['Admin', 'Posts_C', 'view', $id_postingan];
+                $segments = ['Admin', 'projects', 'view', $id_postingan];
 
                 // Akan redirect ke /Admin/Rak_A/view/$id_pengguna
                 return redirect()->to(site_url($segments));
@@ -147,7 +147,7 @@ class Posts_C extends BaseController
 
                 $model->save($projects);
 
-                $segments = ['Admin', 'Posts_C', 'view', $id_postingan];
+                $segments = ['Admin', 'projects', 'view', $id_postingan];
 
                 return redirect()->to(site_url($segments));
             }
@@ -164,7 +164,7 @@ class Posts_C extends BaseController
 
         $delete = $model->delete($id_postingan);
 
-        return redirect()->to(site_url('Admin/Posts_C/read'));
+        return redirect()->to(site_url('Admin/projects'));
     }
 
 }

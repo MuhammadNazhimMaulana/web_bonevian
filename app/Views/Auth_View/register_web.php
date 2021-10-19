@@ -85,7 +85,7 @@ $errors = $session->getFlashdata('errors');
                     </div>
                 <?php endif ?>
 
-                <?= form_open_multipart('/register') ?>
+                <?= form_open_multipart('Auth/Authorisasi/register') ?>
                     <div class="mb-4">
                         <?= form_label("Nama Lengkap", "nama_lengkap") ?>
                         <?= form_input($nama_lengkap) ?>
