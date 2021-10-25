@@ -3,19 +3,18 @@
 <div class="kontainer">
     <div class="left">
         <div class="big-title">
-            <h1>Judul Nya Koe</h1>
-            <h1>Mulai Eksplorasi</h1>
+            <h1>My Projects Web</h1>
         </div>
         <p class="text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quis explicabo molestiae sit eum qui adipisci aperiam laudantium quaerat?
+            If you are curious with what I have made you could click the button below for more information
         </p>
         <div class="cta">
-            <a href="#" class="tombol">Mulai</a>
+            <a href="#" class="tombol">View Projects</a>
         </div>
     </div>
     
     <div class="right">
-        <img src="<?= base_url('img/Rhino.jpg') ?>" class="gambar-kanan">
+        <img src="<?= base_url('img/Bonevian.png') ?>" class="gambar-kanan">
     </div>
 </div>
 

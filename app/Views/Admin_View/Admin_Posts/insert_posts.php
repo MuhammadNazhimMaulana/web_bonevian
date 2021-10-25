@@ -23,9 +23,9 @@
         'class' => 'form-control'
     ];
   
-    $ringkasan_post = [
-        'name' => 'ringkasan_post',
-        'id' => 'ringkasan_post',
+    $link_post = [
+        'name' => 'link_post',
+        'id' => 'link_post',
         'value' => null,
         'class' => 'form-control'
     ];
@@ -91,8 +91,8 @@ $errors = $session->getFlashdata('errors');
                     </div>
 
                     <div class="form-group mt-3">
-                            <?= form_label("Ringkasan Postingan", "ringkasan_post") ?>
-                            <?= form_input($ringkasan_post) ?>
+                            <?= form_label("Ringkasan Postingan", "link_post") ?>
+                            <?= form_input($link_post) ?>
                     </div>
 
                     <div class="form-group mt-3">

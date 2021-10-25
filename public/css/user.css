@@ -167,8 +167,8 @@ header .kontainer {
 }
 
 .gambar-kanan {
-  width: 123%;
-  transform: translate(15%, 25px);
+  width: 55%;
+  transform: translate(65%, 25px);
 }
 
 .toggle-btn {
@@ -398,4 +398,9 @@ header .kontainer {
   .showcase-area .tombol {
     font-size: 0.8rem;
   }
+}
+
+/* Postingan user */
+.bottom-area {
+  margin-top: 70px;
 }

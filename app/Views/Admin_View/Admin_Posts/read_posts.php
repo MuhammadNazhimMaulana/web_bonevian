@@ -32,7 +32,7 @@
                                         <td><?= $posts->username ?></td>
                                         <td><?= $posts->judul_post ?></td>
                                         <td><?= $posts->isi_post ?></td>
-                                        <td><?= $posts->ringkasan_post ?></td>
+                                        <td><?= $posts->link_post ?></td>
                                         <td>
                                             <a href="<?= base_url('Admin/projects/view/' . $posts->id_postingan) ?>" class="btn btn-primary me-1">View</a>
                                             <a href="<?= base_url('Admin/projects/update/' . $posts->id_postingan) ?>" class="btn btn-success me-1">Update</a>
