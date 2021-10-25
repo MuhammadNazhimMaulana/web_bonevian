@@ -259,10 +259,11 @@ td .status {
   margin-right: 1rem;
 }
 
-tr td:last-child {
+/* tr td:last-child {
   display: flex;
   align-items: center;
-}
+  justify-content: center;
+} */
 
 .status.purple {
   background: rebeccapurple;

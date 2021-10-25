@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="kartu-body">
-                    <div class="table-responsive">
+                    <div class="table-responsive text-center">
                         <table width="100%">
                             <thead>
                                 <tr>
@@ -21,7 +21,7 @@
                                     <td>Judul</td>
                                     <td>Isi</td>
                                     <td>Ringkasan</td>
-                                    <td>Satus</td>
+                                    <td>Status</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,9 +33,9 @@
                                         <td><?= $posts->judul_post ?></td>
                                         <td><?= $posts->isi_post ?></td>
                                         <td><?= $posts->ringkasan_post ?></td>
-                                        <td class="col-md-3">
-                                            <a href="<?= base_url('Admin/projects/view/' . $posts->id_postingan) ?>" class="btn btn-primary">View</a>
-                                            <a href="<?= base_url('Admin/projects/update/' . $posts->id_postingan) ?>" class="btn btn-success">Update</a>
+                                        <td>
+                                            <a href="<?= base_url('Admin/projects/view/' . $posts->id_postingan) ?>" class="btn btn-primary me-1">View</a>
+                                            <a href="<?= base_url('Admin/projects/update/' . $posts->id_postingan) ?>" class="btn btn-success me-1">Update</a>
                                             <a href="#modalDelete<?= $posts->id_postingan ?>" data-bs-toggle="modal" onclick="" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
