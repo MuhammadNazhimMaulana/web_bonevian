@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 
 use App\Models\Pengguna_M;
+use App\Models\Projects_M;
 use App\Entities\Pengguna_E;
 
 class Admin_C extends BaseController
@@ -23,8 +24,17 @@ class Admin_C extends BaseController
 
     public function home()
     {
+        $model_pengguna = new Pengguna_M();
+        $model_projek = new Projects_M();
+
+        $post_per_user = $model_projek->select('COUNT(tbl_postingan.id_postingan) AS jumlah, tbl_pengguna.username AS user')
+            ->join('tbl_pengguna', 'tbl_postingan.id_pengguna=tbl_pengguna.id_pengguna')
+            ->groupBy('tbl_postingan.id_pengguna')
+            ->get();
+
         $data_admin = [
-            'title' => 'Dashboard Admin'
+            'title' => 'Dashboard Admin',
+            "post_per_user" => $post_per_user,
         ];
 
         return view('Admin_View/dashboard_home', $data_admin);

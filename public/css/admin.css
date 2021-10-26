@@ -204,7 +204,7 @@ main {
   margin-top: 3.5rem;
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: 70% auto;
+  grid-template-columns: 50% auto;
 }
 
 .kartu {

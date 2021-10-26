@@ -48,81 +48,51 @@
     <div class="recent-grid">
         <div class="projects">
             <div class="kartu">
-                <div class="kartu-header">
-                    <h2>Projek Sebelumnya <span class="las la-arrow-right"></span></h2>
-
-                    <button>Lihat Semua</button>
+                <div class="kartu-header flex justify-content-center">
+                    <h2>Postingan Admin</h2>
                 </div>
 
                 <div class="kartu-body">
-                    <div class="table-responsive">
-                        <table width="100%">
-                            <thead>
-                                <tr>
-                                    <td>Judul Projek</td>
-                                    <td>Departemen</td>
-                                    <td>Satus</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>UI/UX</td>
-                                    <td>Tim UI</td>
-                                    <td>
-                                        <span class="status purple"></span>
-                                        review
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Pengembangan Web</td>
-                                    <td>Fronted</td>
-                                    <td>
-                                        <span class="status pink"></span>
-                                        Dalam Proses
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Ushop app</td>
-                                    <td>Tim Mobile</td>
-                                    <td>
-                                        <span class="status orange"></span>
-                                        Pending
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <canvas id="postingan" width="250" height="250"></canvas>
                 </div>
             </div>
-        </div>
-        <div class="customers">
-            <div class="kartu">
-                <div class="kartu-header">
-                    <h3>Pelanggan Baru</h3>
-    
-                    <button>Lihat Semua</button>
-                </div>
-    
-                <div class="kartu-body">
-                    <div class="customer">
-                        <div class="info">
-                            <img src="" width="40px" height="40px">
-                            <div>
-                                <h4>Nama</h4>
-                                <small>Jabatan</small>
-                            </div>
-                        </div>
-                        <div class="contact">
-                            <span class="las la-user-circle"></span>
-                            <span class="las la-comment"></span>
-                            <span class="las la-phone"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-  
         </div>
     </div>
 </main>
+
+<!-- Chart JS -->
+<script src="<?= base_url('ChartJs/Chart.min.js') ?>"></script>
+<script>
+    // Chart Untuk postingan
+    var kategori_postingan = document.getElementById('postingan');
+    var data_postingan = [];
+    var label_postingan = [];
+
+    <?php foreach ($post_per_user->getResult() as $key => $value) : ?>
+        data_postingan.push(<?= $value->jumlah ?>);
+        label_postingan.push('<?= $value->user ?>');
+    <?php endforeach ?>
+
+    var data_post_per_user = {
+        datasets: [{
+            data: data_postingan,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+            ],
+        }],
+        labels: label_postingan,
+    }
+
+    var chart_postingan = new Chart(kategori_postingan, {
+        type: 'doughnut',
+        data: data_post_per_user,
+        options: {
+                maintainAspectRatio: false,
+            }
+    });
+
+</script>
 
 <?= $this->endSection() ?>
