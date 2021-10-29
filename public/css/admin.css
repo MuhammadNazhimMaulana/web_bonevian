@@ -182,14 +182,17 @@ main {
   color: var(--tulisan-abu);
 }
 
-.card-single:last-child {
+.card-single:hover {
   background: var(--warna-utama);
 }
 
-.card-single:last-child h1,
-.card-single:last-child div:first-child span,
-.card-single:last-child div:last-child span {
+.card-single:hover h1,
+.card-single:hover div:first-child span,
+.card-single:hover div:last-child span,
+.card-single:hover div:hover span {
   color: #fff;
+  transition: ease-out;
+  transition-duration: 0.8s;
 }
 
 /* Dibawah cards */
