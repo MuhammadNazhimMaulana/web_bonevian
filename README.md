@@ -1,3 +1,5 @@
 # Web Bonevian
 
-Website buatan bonevian, coming soon
+Website buatan bonevian
+
+Coming Soon
